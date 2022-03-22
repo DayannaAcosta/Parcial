@@ -87,16 +87,19 @@ WHERE FECHA_DE_CONTRATACION = (
 	FROM empleados)
 ORDER BY NOMBRES;
 
-10.Consultar todos los empleados que estén entre 17 años y 25 años
+#10.Consultar todos los empleados que estén entre 17 años y 25 años
+SELECT *
+FROM EMPLEADOS
+WHERE EDAD_ BETWEEN '17' AND '25';
 
-11.Queremos saber el promedio de edad de los empleados de la empresa
+#11.Queremos saber el promedio de edad de los empleados de la empresa
 
-12. necesitamos sumar todos los sueldos de los empleados
+#12. necesitamos sumar todos los sueldos de los empleados
 
-13.Queremos saber el nombre, sede, estrato, fecha de contratación y el
+#13.Queremos saber el nombre, sede, estrato, fecha de contratación y el nombre del cargo del empleado que más gana en la empresa.
 
-nombre del cargo del empleado que más gana en la empresa.
-
-14. Queremos saber el nombre del médico más joven que haya en la sede
-
-SUR
+#14. Queremos saber el nombre del médico más joven que haya en la sede SUR
+SELECT NOMBRES
+FROM EMPLEADOS
+WHERE EDAD_ = (
+    SELECT MIN(edad_) FROM empleados) AND CARGO = 'MEDICO' AND SEDE = 'SUR';
