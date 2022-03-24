@@ -49,7 +49,6 @@ FROM   EMPLEADOS
 WHERE ESTRATO = 'ESTRATO 6';
 
 #4. ¿Cuál es el empleado más nuevo?
-
 SELECT	*
 FROM   EMPLEADOS
 WHERE FECHA_DE_CONTRATACION = (
@@ -78,7 +77,7 @@ FROM EMPLEADOS
 WHERE YEAR(FECHA_DE_CONTRATACION) BETWEEN '2000' AND '2005';
 
 #9. Obtener el nombre y edad de los empleados más jóvenes y más antiguos y ordene el nombre de manera decreciente
-SELECT	NOMBRES, EDAD_
+SELECT	NOMBRES, EDAD
 FROM   EMPLEADOS
 WHERE FECHA_DE_CONTRATACION = (
 	SELECT MAX(fecha_de_contratacion)
