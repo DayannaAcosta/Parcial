@@ -92,10 +92,19 @@ FROM EMPLEADOS
 WHERE EDAD BETWEEN '17' AND '25';
 
 #11.Queremos saber el promedio de edad de los empleados de la empresa
+SELECT avg(edad)
+FROM EMPLEADOS;
 
 #12. necesitamos sumar todos los sueldos de los empleados
+SELECT SUM(SUELDO)
+FROM EMPLEADOS;
 
 #13.Queremos saber el nombre, sede, estrato, fecha de contratación y el nombre del cargo del empleado que más gana en la empresa.
+SELECT	NOMBRES, SEDE, ESTRATO, FECHA_DE_CONTRATACION, CARGO
+FROM   EMPLEADOS
+WHERE SUELDO = (
+	SELECT MAX(sueldo)
+	FROM empleados);
 
 #14. Queremos saber el nombre del médico más joven que haya en la sede SUR
 SELECT NOMBRES
