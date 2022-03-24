@@ -24,9 +24,9 @@ CREATE TABLE empleados (
     fecha_de_contratacion DATE,
     edad                  INTEGER,
     sueldo                INTEGER,
-    sede                  VARCHAR2(50),
-    estrato               VARCHAR2(50),
-    cargo                 VARCHAR2(50)
+    sede                  INTEGER,
+    estrato               INTEGER,
+    cargo                 INTEGER
 );
 
 ALTER TABLE empleados ADD CONSTRAINT empleados_pk PRIMARY KEY ( cc );
