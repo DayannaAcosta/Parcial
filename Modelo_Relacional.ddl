@@ -23,7 +23,7 @@ CREATE TABLE empleados (
     segundo_apellido      VARCHAR2(50),
     fecha_de_contratacion DATE,
     edad                  INTEGER,
-    sueldo                INTERVAL DAY(9) TO SECOND(0),
+    sueldo                INTEGER,
     sede_id_sede          INTEGER NOT NULL,
     estrato_id_estrato    INTEGER NOT NULL,
     cargo_id_cargo        INTEGER NOT NULL
