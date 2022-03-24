@@ -89,7 +89,7 @@ ORDER BY NOMBRES;
 #10.Consultar todos los empleados que estén entre 17 años y 25 años
 SELECT *
 FROM EMPLEADOS
-WHERE EDAD_ BETWEEN '17' AND '25';
+WHERE EDAD BETWEEN '17' AND '25';
 
 #11.Queremos saber el promedio de edad de los empleados de la empresa
 
@@ -100,5 +100,5 @@ WHERE EDAD_ BETWEEN '17' AND '25';
 #14. Queremos saber el nombre del médico más joven que haya en la sede SUR
 SELECT NOMBRES
 FROM EMPLEADOS
-WHERE EDAD_ = (
+WHERE EDAD = (
     SELECT MIN(edad_) FROM empleados) AND CARGO = 'MEDICO' AND SEDE = 'SUR';
