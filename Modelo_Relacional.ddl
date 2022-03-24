@@ -18,15 +18,15 @@ ALTER TABLE cargo ADD CONSTRAINT cargo_pk PRIMARY KEY ( id_cargo );
 
 CREATE TABLE empleados (
     cc                    INTEGER NOT NULL,
-    nombres               VARCHAR2(50) NOT NULL,
+    nombres               VARCHAR2(50),
     primer_apellido       VARCHAR2(50),
     segundo_apellido      VARCHAR2(50),
     fecha_de_contratacion DATE,
     edad                  INTEGER,
     sueldo                INTEGER,
-    sede_id_sede          INTEGER NOT NULL,
-    estrato_id_estrato    INTEGER NOT NULL,
-    cargo_id_cargo        INTEGER NOT NULL
+    sede                  VARCHAR2(50),
+    estrato               VARCHAR2(50),
+    cargo                 VARCHAR2(50)
 );
 
 ALTER TABLE empleados ADD CONSTRAINT empleados_pk PRIMARY KEY ( cc );
@@ -46,15 +46,15 @@ CREATE TABLE sede (
 ALTER TABLE sede ADD CONSTRAINT sede_pk PRIMARY KEY ( id_sede );
 
 ALTER TABLE empleados
-    ADD CONSTRAINT empleados_cargo_fk FOREIGN KEY ( cargo_id_cargo )
+    ADD CONSTRAINT empleados_cargo_fk FOREIGN KEY ( cargo )
         REFERENCES cargo ( id_cargo );
 
 ALTER TABLE empleados
-    ADD CONSTRAINT empleados_estrato_fk FOREIGN KEY ( estrato_id_estrato )
+    ADD CONSTRAINT empleados_estrato_fk FOREIGN KEY ( estrato )
         REFERENCES estrato ( id_estrato );
 
 ALTER TABLE empleados
-    ADD CONSTRAINT empleados_sede_fk FOREIGN KEY ( sede_id_sede )
+    ADD CONSTRAINT empleados_sede_fk FOREIGN KEY ( sede )
         REFERENCES sede ( id_sede );
 
 
